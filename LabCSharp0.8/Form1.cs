@@ -14,11 +14,16 @@ namespace LabCSharp0._8
         public Form1()
         {
             InitializeComponent();
+            pictureBox.Paint += PictureBox_Paint;
         }
-        private void PictureBox(object sender, PaintEventArgs e)
+
+        // Draw a rectangle on the PictureBox when it is painted
+        private void PictureBox_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(Color.White);
             e.Graphics.DrawRectangle(Pens.Black, 10, 10, 100, 100);
+            e.Graphics.DrawLine(Pens.Red, 10, 10, 110, 110);
+            e.Graphics.DrawLine(Pens.Red, 110,10, 10, 110);
         }
     }
 }
